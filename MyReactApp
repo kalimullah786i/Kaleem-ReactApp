@@ -1,1 +1,61 @@
-<h1> Hello </h1>
+const App = () =>{
+const course= 'Half Stack Application Development'
+const Exercises1=10
+const Part1='Fundamental of React'
+const Exercises2=12
+const Part2='Using Props to pass data'
+const Exercises3=7
+const Part3='State Of component'
+
+
+    return(
+        <div>
+            <Header course={course} />
+            <Content part1={Part1} exercises1={Exercises1} part2={Part2} exercises2={Exercises2} part3={Part3} exercises3={Exercises3} />
+            <Total total={Exercises1+Exercises2+Exercises3} />
+        
+        </div>
+)
+} 
+
+const Header = (Props) =>{
+return (
+<>
+<h1>{Props.course}</h1>
+
+</>
+
+)
+}
+
+const Content = (Props) =>{
+    return(
+        <>
+        <Part Part={Props.part1} exercises= {Props.exercises1} />
+        <Part Part={Props.part2} exercises= {Props.exercises2} />
+        <Part Part={Props.part3} exercises= {Props.exercises3} />
+        </>
+    )
+}
+
+const Part = (Props) =>{
+return(
+
+    <>
+        
+    <p>
+        {Props.Part} {Props.exercises}
+    </p>
+    </>
+)
+} 
+
+const Total= (Props) =>{
+return(
+<p>
+    Total Number Of Exercises= {Props.total}
+</p>
+)
+}
+
+export default App
